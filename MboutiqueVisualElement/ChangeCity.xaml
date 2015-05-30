@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MboutiqueVisualElement.ChangeCity" BackgroundImage="mBoutique.png" Title="Changecity">
+	<ContentPage.Padding>
+	<OnPlatform x:TypeArguments="Thickness"
+                iOS="10, 20, 10, 10"
+                Android="10,10,10,10"/>
+  </ContentPage.Padding>  
+  <ContentPage.Resources>
+    <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#060217"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+            </Style>
+            <OnPlatform x:TypeArguments="Color" Android="White" iOS="Black"
+            x:Key="PrimaryTextColor" />
+            <Style TargetType="Entry" x:Key="EntryColor">
+            <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+            </Style>
+<!--  <OnPlatform x:TypeArguments="Font" x:Key="standardFont">
+<OnPlatform.iOS>12</OnPlatform.iOS>
+<OnPlatform.Android>15</OnPlatform.Android>
+</OnPlatform>-->
+        </ResourceDictionary>
+    </ContentPage.Resources>    
+<Grid>
+	    <Grid.RowDefinitions>
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	       <RowDefinition Height="Auto" />
+	    </Grid.RowDefinitions>
+
+	    <Grid.ColumnDefinitions>
+	      <ColumnDefinition Width="Auto" />
+	      <ColumnDefinition Width="*" />
+	    </Grid.ColumnDefinitions>
+
+	    <Label Text="{Binding CurrentCity}" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" x:Name="lblCurrentCity"/>
+		<Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" x:Name="CurrentCityValue"/>
+<!--        <Label Text="Change City" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20"/>-->
+
+        <Label Text="{Binding Country}" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+		<Picker Title="{Binding CountryPicker}" Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand" x:Name="pickerCountry">
+		<Picker.Items>
+		<x:String>Aus</x:String>
+		<x:String>IND</x:String>
+		<x:String>SriLanka</x:String>
+		<x:String>Pakistan</x:String>
+		<x:String>England</x:String>
+		<x:String>Thayland</x:String>
+		</Picker.Items>
+		</Picker>
+
+		<Label Text="{Binding State}" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+		<Picker Grid.Row="2" Grid.Column="1" Title="{Binding CountryPicker}" x:Name="pickerState">
+		<Picker.Items >
+		<x:String>Kar</x:String>
+		<x:String>Kerala</x:String>
+		<x:String>TamilNadu</x:String>
+		<x:String>West Bengal</x:String>
+		<x:String>Gujarat</x:String>
+		<x:String>jk</x:String>
+		</Picker.Items>
+		</Picker>
+
+		<Label Text="{Binding City}" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+		<Picker Title="{Binding CityPicker}" Grid.Row="3" Grid.Column="1" x:Name="pickerCity">
+		<Picker.Items>
+		<x:String>Banagaluru</x:String>
+		<x:String>Managaluru</x:String>
+		<x:String>BELAGAVI</x:String>
+		<x:String>Mandya</x:String>
+		<x:String>England</x:String>
+		<x:String>Mysooru</x:String>
+		</Picker.Items>
+		</Picker>
+
+		<Button Text="{Binding Save}" Grid.Row="4" Grid.Column="1" HorizontalOptions="CenterAndExpand" HeightRequest="37" WidthRequest="100" BackgroundColor="#49D7B8" TextColor="Black" Clicked="OnChageCityButtonClicked"/>
+		 </Grid>
+		 </ContentPage>

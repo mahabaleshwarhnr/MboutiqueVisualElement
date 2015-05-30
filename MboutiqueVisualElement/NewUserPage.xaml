@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MboutiqueVisualElement;assembly=MboutiqueVisualElement" x:Class="MboutiqueVisualElement.NewUserPage" BackgroundImage="mBoutique.png" Title="NewUser">
+	<ContentPage.Padding>
+	<OnPlatform x:TypeArguments="Thickness"
+                iOS="10, 20, 10, 5"
+                Android="10,10,10,5"/>
+  </ContentPage.Padding> 
+  <ContentPage.Resources>
+        <ResourceDictionary>
+        <OnPlatform x:TypeArguments="x:Double" x:Key="NameLabelStyle"
+                        Android="15"
+                        iOS="12"/>
+            <Style TargetType="Label" x:Key="FontSizeLabel">
+                <Setter Property="TextColor" Value="#060217"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="FontSize" Value="{StaticResource NameLabelStyle}">
+      
+          </Setter>
+          </Style>
+            <OnPlatform x:TypeArguments="Color" Android="White" iOS="Black"
+            x:Key="PrimaryTextColor" />
+            <Style TargetType="Entry" x:Key="EntryColor">
+            <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True" TargetType="Entry">
+             <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+<!--           <Setter Property="Scale" Value="1.1"/>-->
+             </Trigger>
+            </Style.Triggers>
+            </Style>
+
+     
+        </ResourceDictionary>
+    </ContentPage.Resources> 
+<StackLayout>
+	<Grid>
+	<Grid.RowDefinitions>
+		<RowDefinition Height="39"></RowDefinition>
+		<RowDefinition Height="39"></RowDefinition>
+		<RowDefinition Height="39"></RowDefinition>
+		<RowDefinition Height="39"></RowDefinition>
+		<RowDefinition Height="39"></RowDefinition>
+		<RowDefinition Height="39"></RowDefinition>
+	</Grid.RowDefinitions>
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition Width="120"></ColumnDefinition>
+		<ColumnDefinition Width="160*"></ColumnDefinition>
+	</Grid.ColumnDefinitions>
+
+	<Label Text="UserID" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Style="{StaticResource FontSizeLabel}"/>
+	<Label Grid.Row="0" Grid.Column="1" x:Name="UserID"  Style="{StaticResource FontSizeLabel}"/>
+
+	<Label Text="Password" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" Style="{StaticResource FontSizeLabel}"/>
+	<Entry Placeholder="Enter Password" x:Name="entryPass" IsPassword="true" Grid.Row="1" Grid.Column="1"  Style="{StaticResource EntryColor}"/>
+
+	<Label Text="Confirm Password" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"  LineBreakMode="WordWrap" Style="{StaticResource FontSizeLabel}"/>
+	<Entry Placeholder="Enter Password" x:Name="entryConfirmPass" IsPassword="true" Grid.Row="2" Grid.Column="1" Style="{StaticResource EntryColor}"/>
+
+	<Label Text="Push Notifications" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" LineBreakMode="WordWrap" Style="{StaticResource FontSizeLabel}"/>
+	<Switch Grid.Row="3" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="StartAndExpand"/>
+
+	<Label Text="Mobile Number" Grid.Row="4" Grid.Column="0" LineBreakMode="WordWrap" Style="{StaticResource FontSizeLabel}"/>
+	<Entry Placeholder="Enter mobile number" x:Name="entryMobile" Grid.Row="4" Grid.Column="1" Style="{StaticResource EntryColor}"/>
+
+	<Label Text="Phone Number" Grid.Row="5" Grid.Column="0" VerticalOptions="Center" LineBreakMode="WordWrap" Style="{StaticResource FontSizeLabel}"/>
+	<Entry Placeholder="Enter the phone number" x:Name="entryPhone" Grid.Row="5" Grid.Column="1" Style="{StaticResource EntryColor}">
+
+	</Entry>
+
+	<Button Text="Submit" Grid.Row="6" Grid.Column="1" BackgroundColor="#49D7B8" TextColor="Black" HeightRequest="35" Clicked="OnNewUseSaveBtnClicked"/>
+	</Grid>
+</StackLayout>
+</ContentPage>

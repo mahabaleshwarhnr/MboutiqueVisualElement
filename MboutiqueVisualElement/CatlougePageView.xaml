@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MboutiqueVisualElement.CatlogPageView" Title = "MBoutique" BackgroundImage="mBoutique.png">
+<ContentPage.ToolbarItems>
+<ToolbarItem Text="-All-" Order="Secondary"/>
+<ToolbarItem Text="Chain" Order="Secondary"/>
+<ToolbarItem Text="Rings" Order="Secondary"/>
+<ToolbarItem Text="Necklace" Order="Secondary"/>
+<ToolbarItem Text="Bangales" Order="Secondary"/>
+</ContentPage.ToolbarItems>
+<ContentPage.Resources>
+        <ResourceDictionary>
+         
+            <OnPlatform x:TypeArguments="Color" Android="#B38CE1" iOS="#DC6E9C"
+            x:Key="NameTextColor" />
+            <OnPlatform x:TypeArguments="Color" Android="#1B322A" iOS="#927C0D"
+            x:Key="PriceTextColor" />
+			
+        </ResourceDictionary>
+    </ContentPage.Resources>  
+<StackLayout>
+<ListView x:Name="mBoutiqueCatlog"
+    HasUnevenRows="true"
+     ItemTapped="OnItemSelected"
+      SeparatorColor="Teal">
+ <ListView.ItemTemplate>
+<DataTemplate>
+<ViewCell>
+<Grid Padding="5">
+<Grid.RowDefinitions>
+<RowDefinition Height="30"></RowDefinition>
+<RowDefinition Height="30"></RowDefinition>
+<RowDefinition Height="30"></RowDefinition>
+</Grid.RowDefinitions>
+<Grid.ColumnDefinitions>
+<ColumnDefinition Width="120"></ColumnDefinition>
+<ColumnDefinition Width="*"></ColumnDefinition>
+</Grid.ColumnDefinitions>
+<Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Source="{Binding Image}" Aspect="AspectFill" />
+<Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" FontSize="15" TextColor="{StaticResource NameTextColor}"></Label>
+<Label Grid.Row="1" Grid.Column="1" Text="{Binding smallDetail}" Font="Small" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" FontSize="12"></Label>
+<Label Grid.Row="2" Grid.Column="1" Text="{Binding Price}" TextColor="{StaticResource PriceTextColor}" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand"></Label>
+</Grid>
+</ViewCell>
+</DataTemplate>
+</ListView.ItemTemplate>
+</ListView>
+<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="3" Spacing="5">
+<Button  HorizontalOptions="Start" Text="Catlouge"/>
+<Button x:Name="BtnPickeditem" HorizontalOptions="Center" Text="PickedItem"/>
+<Button x:Name="BtnFavourites" Text="Favourites" HorizontalOptions="End"/>
+</StackLayout>
+</StackLayout>
+</ContentPage>

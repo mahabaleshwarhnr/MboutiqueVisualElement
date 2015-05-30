@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MboutiqueVisualElement.PaymentScreen" Title="mBoutique" BackgroundImage="mBoutique.png">
+<ContentPage.Padding>
+<OnPlatform x:TypeArguments="Thickness" Android="10,10,10,10" iOS="10,20,10,10" />
+
+</ContentPage.Padding>
+<ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="Color" Android="#1B322A" iOS="#927C0D"
+            x:Key="PriceTextColor" />
+            <Style TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+            </Style>
+            </ResourceDictionary>
+           </ContentPage.Resources>
+<StackLayout Padding="5">
+<Grid Padding="5">
+<Grid.RowDefinitions>
+	<RowDefinition Height="40"></RowDefinition>
+	<RowDefinition Height="60"></RowDefinition>
+</Grid.RowDefinitions>
+<Grid.ColumnDefinitions>
+	<ColumnDefinition Width="80"></ColumnDefinition>
+		<ColumnDefinition Width="*"></ColumnDefinition>
+	<ColumnDefinition Width="80"></ColumnDefinition>
+	</Grid.ColumnDefinitions>
+<Label Text="GrandTotal" Grid.Row="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" x:Name="lblGrandTotal"/>
+<Image Source="credit_card.png" Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+<Label Text="Pay with Credit card/Debit Card" LineBreakMode="WordWrap" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+<Label Text="{Binding grandTotal}" LineBreakMode="TailTruncation" Grid.Row="1" Grid.Column="2" x:Name="totalLabel" HorizontalOptions="Start" VerticalOptions="Center" TextColor="{StaticResource PriceTextColor}"/>
+</Grid>
+<Button Text="Proceed" x:Name="proceedButton" HorizontalOptions="End" VerticalOptions="End"/>
+</StackLayout>
+</ContentPage>

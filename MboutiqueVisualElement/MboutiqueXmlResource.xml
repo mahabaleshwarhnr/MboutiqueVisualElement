@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ArrayOfMboutiqueVisualElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<MboutiqueVisualElement>
+		<Name>STN04</Name>
+		<smallDetail>TrendyRing</smallDetail>
+		<Price>210000</Price>
+		<Image>r2.png</Image>
+		<Details>Trendy ring is a fashionable ornament with australian diamond</Details>
+	</MboutiqueVisualElement>
+	<MboutiqueVisualElement>
+		<Name>STN08</Name>
+		<smallDetail>Fashion Ring</smallDetail>
+		<Price>310000</Price>
+		<Image>r3.png</Image>
+		<Details>Trendy ring is a fashionable ornament with Newzeland stone</Details>
+	</MboutiqueVisualElement>
+	<MboutiqueVisualElement>
+		<Name>STN12</Name>
+		<smallDetail>Traditional Ring</smallDetail>
+		<Price>410000</Price>
+		<Image>r4.png</Image>
+		<Details>Trendy ring is a fashionable ornament with polished stone</Details>
+	</MboutiqueVisualElement>
+	<MboutiqueVisualElement>
+		<Name>STN16</Name>
+		<smallDetail>Tanishq Ring</smallDetail>
+		<Price>510000</Price>
+		<Image>r5.png</Image>
+		<Details>Trendy ring is a fashionable ornament with Tanishq stone</Details>
+	</MboutiqueVisualElement>
+</ArrayOfMboutiqueVisualElement>

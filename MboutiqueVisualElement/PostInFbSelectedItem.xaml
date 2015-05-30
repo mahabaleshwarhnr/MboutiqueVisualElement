@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MboutiqueVisualElement.PostInFbSelectedItem" BackgroundImage="mBoutique.png">
+<ContentPage.Padding>
+<OnPlatform x:TypeArguments="Thickness" Android="10,10,10,10" iOS="10,20,10,10" />
+</ContentPage.Padding>
+<ScrollView>
+<StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Padding="5">
+<StackLayout Orientation="Horizontal">
+	<Image Source="facebook.png" HeightRequest="20" WidthRequest="20"/>
+    <Label Text="mBoutique Prezzie" />
+    </StackLayout>
+    <Label Text="STN04" XAlign="Center" YAlign="Center"/>
+	<StackLayout>
+	<Frame OutlineColor="Red" BackgroundColor="Gray">
+	<Image Source="r2.png"/>
+	</Frame>
+	<Frame OutlineColor="Red" Padding="10">
+	<Label Text="Your friend just bought Trendy Ring for you" TextColor="White" />
+	</Frame>
+	</StackLayout>
+	<StackLayout Orientation="Horizontal">
+	<Label Text="Show message in wallposting" />
+	<Switch IsEnabled="true" />
+	</StackLayout>
+	<Button Text="OK" Clicked="OnPublishButton" HorizontalOptions="End" VerticalOptions="End"/>
+	</StackLayout>
+	</ScrollView>
+</ContentPage>

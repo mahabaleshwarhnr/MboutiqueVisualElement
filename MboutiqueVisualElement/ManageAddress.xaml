@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MboutiqueVisualElement.ManageAddress" BackgroundImage="mBoutique.png" Title="Manage Address">	
+		<ContentPage.Padding>
+			<OnPlatform x:TypeArguments="Thickness"
+		                iOS="10, 20, 10, 10"
+		                Android="10,10,10,10"/>
+		  </ContentPage.Padding>  
+	<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#060217"></Setter>
+            
+                 <Setter Property="FontFamily">
+            <Setter.Value>
+          <OnPlatform x:TypeArguments="x:String">
+            <OnPlatform.iOS>HelveticaNeue-Bold</OnPlatform.iOS>
+        </OnPlatform>
+        </Setter.Value>
+        </Setter>
+            </Style>
+            <OnPlatform x:TypeArguments="Color" Android="White" iOS="Green"
+            x:Key="PrimaryTextColor" />
+            <Style TargetType="Entry" x:Key="EntryColor">
+            <Style.Triggers>
+          <Trigger Property="IsFocused" Value="True" TargetType="Entry">
+            
+<!--            <Setter Property="TextColor" Value="Green" />-->
+             <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+          </Trigger>
+        </Style.Triggers>
+           
+            </Style>
+<!--  <OnPlatform x:TypeArguments="Font" x:Key="standardFont">
+<OnPlatform.iOS>12</OnPlatform.iOS>
+<OnPlatform.Android>15</OnPlatform.Android>
+</OnPlatform>-->
+        </ResourceDictionary>
+    </ContentPage.Resources>  
+		  <ScrollView>
+
+		<Grid>
+	    <Grid.RowDefinitions>
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	      <RowDefinition Height="Auto" />
+	    </Grid.RowDefinitions>
+
+	    <Grid.ColumnDefinitions>
+	      <ColumnDefinition Width="Auto" />
+	      <ColumnDefinition Width="*" />
+	    </Grid.ColumnDefinitions>
+	    <Label Text="{Binding Address1}" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+		<Entry Grid.Row="0" Grid.Column="1" Text="{Binding Path=Housenumber}" Placeholder="enter your house number" Style="{StaticResource EntryColor}" x:Name="houseName"></Entry>
+		<Label Text="{Binding Address2}" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+		<Entry Placeholder="Enter Street address" Text="{Binding Path=Streetname}" Grid.Row="1" Grid.Column="1" Style="{StaticResource EntryColor}" x:Name="streetName"/>
+		<Label Text="{Binding Country}" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+		<Picker Title="{Binding CountryPicker}" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1" x:Name="countryPicker">
+	        <Picker.Items>
+	            <x:String>India</x:String> 
+	            <x:String>Aus</x:String>
+	            <x:String>USA</x:String> 
+	            <x:String>england</x:String>
+	            <x:String>PAK</x:String> 
+	            <x:String>Srilanka</x:String>
+	        </Picker.Items>
+	    </Picker> 
+	<Label Text="{Binding State}" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+		<Picker Title="{Binding StatePicker}" HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="1" x:Name="statePicker" >
+	        <Picker.Items>
+	            <x:String>Karnataka</x:String> 
+	            <x:String>Gujarat</x:String>
+	            <x:String>Tamilnadu</x:String> 
+	            <x:String>kerala</x:String>
+	            <x:String>maharastra</x:String> 
+	            <x:String>telangana</x:String>
+	        </Picker.Items>
+	    </Picker> 
+	    <Label Text="{Binding City}" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
+		<Picker Title="{Binding CityPicker}" HorizontalOptions="FillAndExpand" Grid.Row="4" Grid.Column="1" x:Name="cityPicker" >
+	        <Picker.Items>
+	            <x:String>Bangaluru</x:String> 
+	            <x:String>Davanagere</x:String>
+	            <x:String>Mangalore</x:String> 
+	            <x:String>Mysooru</x:String>
+	            <x:String>Hubballi</x:String> 
+	            <x:String>Mandya</x:String>
+	        </Picker.Items>
+	    </Picker> 
+	     <Label Text="{Binding ZIP}" Grid.Row="5" Grid.Column="0" VerticalOptions="Center" />
+		<Entry Grid.Row="5" Grid.Column="1" Text="{Binding Path=Zipcode}" Placeholder="enter Your Postal Code" Style="{StaticResource EntryColor}" x:Name="ZipCode"></Entry>
+        <Button Text="{Binding btnFinding}" Grid.Row="6" Grid.Column="1" HorizontalOptions="CenterAndExpand" HeightRequest="37" WidthRequest="100" BackgroundColor="#49D7B8" TextColor="Black"/>
+		 <Label Text="{Binding Lattiude}" Grid.Row="7" Grid.Column="0" VerticalOptions="Center" />
+		<Entry Grid.Row="7" Grid.Column="1" Style="{StaticResource EntryColor}"></Entry>
+         <Label Text="{Binding Logitude}" Grid.Row="8" Grid.Column="0" VerticalOptions="Center" />
+		<Entry Grid.Row="8" Grid.Column="1" Style="{StaticResource EntryColor}"></Entry>
+        <Button Text="{Binding Save}" Grid.Row="9" Grid.Column="1" HorizontalOptions="CenterAndExpand" HeightRequest="37" WidthRequest="100" BackgroundColor="#49D7B8" TextColor="Black" Clicked="OnChageCityButtonClicked"/>
+		 </Grid>
+
+		 </ScrollView> 
+		 </ContentPage>

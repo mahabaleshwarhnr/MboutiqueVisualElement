@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MboutiqueVisualElement;assembly=MboutiqueVisualElement"  x:Class="MboutiqueVisualElement.RegistrationPage" Title="RegistrationPage" BackgroundImage="mBoutique.png">
+<ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0, 20, 0, 0"
+                Android="5,5,0,0"/>
+  </ContentPage.Padding>
+<ContentPage.Resources>
+<ResourceDictionary>
+<OnPlatform x:TypeArguments="Font" x:Key="standardFont">
+<OnPlatform.Android>15</OnPlatform.Android>
+</OnPlatform>
+<Style x:Key="EntryTrigger" TargetType="Entry">
+        <Style.Triggers>
+          <Trigger Property="IsFocused" Value="True" TargetType="Entry">
+             <Setter Property="TextColor" Value="Green" />
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+ 
+</ResourceDictionary>
+</ContentPage.Resources>
+
+   <ContentPage.Content>
+   <StackLayout VerticalOptions="Center" Padding="9">
+<Label Text="{Binding EmailID}" Font="{StaticResource standardFont}" TextColor="Black" FontAttributes="Bold" />
+<Entry Placeholder="Enter your EmailID" x:Name="txtEmailId" TextColor="Black" Style="{StaticResource EntryTrigger}">
+   </Entry>
+  
+<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+   <Button Text="{Binding ButtonRegister}"  BorderRadius="3" Clicked="OnBtnRegisterClicked" BackgroundColor="#49D7B8" TextColor="Black" HeightRequest="40"></Button>
+<!--   <controls:ImageButton Text="Twitter" BackgroundColor="#49D7B8" TextColor="#ffffff" HeightRequest="75" WidthRequest="175" Image="facebook" Orientation="ImageToLeft"  ImageHeightRequest="50" ImageWidthRequest="50" />-->
+   <Button Text="{Binding ButtonSkip}" BorderRadius="3" Clicked="OnBtnSkipClicked" BackgroundColor="#49D7B8" TextColor="Black" HeightRequest="40"></Button>
+   </StackLayout>
+   </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

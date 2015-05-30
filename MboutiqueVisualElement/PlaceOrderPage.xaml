@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MboutiqueVisualElement.PlaceOrderPage" Title="Cart" BackgroundImage="mBoutique.png">
+<!--  <ContentPage.ToolbarItems>
+  <ToolbarItem Icon="badge-Small.png"/>
+  </ContentPage.ToolbarItems>-->
+	<StackLayout>
+		<ListView HasUnevenRows="true" x:Name="pickedItemList" SeparatorVisibility="Default" SeparatorColor="Teal">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.ContextActions>
+							<MenuItem Text="Edit" x:Name="MenuEdit" />
+							<MenuItem Clicked="OnDeleteMenu" Icon="dustbin.png" Text="Delete" IsDestructive="true" CommandParameter="{Binding .}" />
+						</ViewCell.ContextActions>
+						<Grid Padding="5">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="20">
+								</RowDefinition>
+								<RowDefinition Height="20">
+								</RowDefinition>
+								<RowDefinition Height="20">
+								</RowDefinition>
+								<RowDefinition Height="20">
+								</RowDefinition>
+								<RowDefinition Height="20">
+								</RowDefinition>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="130">
+								</ColumnDefinition>
+								<ColumnDefinition Width="130*">
+								</ColumnDefinition>
+							</Grid.ColumnDefinitions>
+							<Image Grid.Row="0" Grid.RowSpan="5" Grid.Column="0" Source="{Binding Image}" Aspect="AspectFill" />
+							<Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" LineBreakMode="TailTruncation" HorizontalOptions="StartAndExpand" VerticalOptions="End" YAlign="Center">
+							</Label>
+							<Label Grid.Row="1" Grid.Column="1" Text="{Binding smallDetail}" LineBreakMode="TailTruncation" Font="Small" HorizontalOptions="StartAndExpand" YAlign="Center">
+							</Label>
+							<StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+								<Label Text="Price:" HorizontalOptions="Center" YAlign="Center" />
+								<Label Text="{Binding Price}" HorizontalOptions="Center" YAlign="Center" />
+							</StackLayout>
+							<StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+								<Label Text="Quantity:" />
+								<Label Text="{Binding ProductQuantity}" />
+							</StackLayout>
+							<StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
+								<Label Text="Total:" LineBreakMode="TailTruncation" HorizontalOptions="Center" YAlign="Center">
+								</Label>
+								<Label Text="{Binding SubTotal}" LineBreakMode="TailTruncation" HorizontalOptions="Center" YAlign="Center">
+								</Label>
+							</StackLayout>
+<!--							<Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" Source="icon.png" x:Name="editIconPic" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>-->
+								
+						</Grid>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		<StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="End">
+			<StackLayout Orientation="Horizontal" HeightRequest="20">
+				<Label Text="Grand Total" />
+				<Label Text="{Binding GrandTotal}" x:Name="lblGrandTotal" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal">
+				<Button Text="Place Order" Clicked="PlaceOrderButtonClicked" />
+			</StackLayout>
+		</StackLayout>
+	</StackLayout>
+</ContentPage>

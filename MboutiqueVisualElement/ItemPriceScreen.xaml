@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MboutiqueVisualElement.ItemPriceScreen" Title="mBoutique" BackgroundImage="mBoutique.png">
+
+	<StackLayout>
+	<Grid HorizontalOptions="StartAndExpand" Padding="10,0,10,0">
+	<Grid.RowDefinitions>
+	<RowDefinition Height="50"></RowDefinition>
+	<RowDefinition Height="50"></RowDefinition>
+	<RowDefinition Height="30"></RowDefinition>
+	<RowDefinition Height="40"></RowDefinition>
+	<RowDefinition Height="30"></RowDefinition>
+	<RowDefinition Height="30"></RowDefinition>
+</Grid.RowDefinitions>
+	<Grid.ColumnDefinitions>
+	<ColumnDefinition Width="120"></ColumnDefinition>
+	<ColumnDefinition Width="120"></ColumnDefinition>
+	</Grid.ColumnDefinitions>
+	<Image x:Name="Productimage" Source="{Binding Image}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+	<Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" XAlign="Start" YAlign="Center"/>
+	<Label Text="Necklace" Grid.Row="1" Grid.Column="1" XAlign="Start" YAlign="Start" />
+	<Label Text="Price(Per Item)" Grid.Row="2" Grid.Column="0"/>
+	<Label Text="{Binding Price}" Grid.Row="2" Grid.Column="1" x:Name="basicPrice" />
+	<Label Text="Quantity" Grid.Row="3" Grid.Column="0" />
+	<Entry Text="0" Grid.Row="3" Grid.Column="1" x:Name="EntryQuantity" WidthRequest="25"/>
+
+	<Label Text="DeliveryCharge" Grid.Row="4" Grid.Column="0"/>
+	<Label Text="Free" Grid.Row="4" Grid.Column="1" />
+	<Label Text="SubTotal" Grid.Row="5" Grid.Column="0" />
+	<Label Grid.Row="5" Grid.Column="1" x:Name="subTotalLbl"/>
+	</Grid>
+	<StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="Center" VerticalOptions="End">
+	<Label Text="Delivered in 2-3 days" XAlign="Start" YAlign="Center"/>
+	<Button Text="Add" x:Name="BtnAddToCart"/>
+
+	</StackLayout>
+	</StackLayout>
+	</ContentPage>

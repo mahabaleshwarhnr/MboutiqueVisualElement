@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MboutiqueVisualElement.FavouritesPage" Title="Favourites List">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<OnPlatform x:TypeArguments="Color" Android="#B5492C" iOS="#927C0D" x:Key="PrimaryTextColor" />
+			<OnPlatform x:TypeArguments="Font" Android="15" iOS="15" x:Key="FontSize" />
+			<OnPlatform x:TypeArguments="Font" Android="12" iOS="12" x:Key="DescriptionFontSize" />
+			<Style TargetType="Label" x:Key="CustomLabel">
+				<Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<StackLayout>
+		<ListView x:Name="mBoutiquefavlog" HasUnevenRows="true" SeparatorColor="Teal">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.ContextActions>
+							<MenuItem Text="Edit"/>
+							<MenuItem Clicked="OnDeleteFavourites"  Text="Delete" IsDestructive="true" CommandParameter="{Binding .}" />
+						</ViewCell.ContextActions>
+						<Grid Padding="5">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="30">
+								</RowDefinition>
+								<RowDefinition Height="30">
+								</RowDefinition>
+								<RowDefinition Height="30">
+								</RowDefinition>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="120">
+								</ColumnDefinition>
+								<ColumnDefinition Width="*">
+								</ColumnDefinition>
+							</Grid.ColumnDefinitions>
+							<Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Source="{Binding Image}" Aspect="AspectFill" />
+							<Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" Font="{StaticResource FontSize}">
+							</Label>
+							<Label Grid.Row="1" Grid.Column="1" Text="{Binding smallDetail}" Font="Small" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" Style="{StaticResource CustomLabel}">
+							</Label>
+							<Label Grid.Row="2" Grid.Column="1" Text="{Binding Price}" Font="{StaticResource DescriptionFontSize}" TextColor="#0F0101" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand">
+							</Label>
+						</Grid>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>

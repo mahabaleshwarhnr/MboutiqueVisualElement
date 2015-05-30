@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MboutiqueVisualElement.AboutPage" BackgroundImage="back1.png" Title="ABOUT US">
+	<ContentPage.Padding>
+	<OnPlatform x:TypeArguments="Thickness"
+                iOS="30, 20, 30, 0"
+                Android="30,5,30,0"/>
+  </ContentPage.Padding> 
+<StackLayout>
+	
+    
+    <Label Text="mBoutique" YAlign="Center" HorizontalOptions="CenterAndExpand" FontSize="15" TextColor="#EB7453"/>
+    <Label Text="VersionName" YAlign="Center" XAlign="Center" FontSize="15" TextColor="#6CE6B5"/>
+    <Label Text="support@softtrends.com" XAlign="Center" YAlign="Center" FontSize="18" TextColor="#6CE6B5"/>
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+ x:Class="MboutiqueVisualElement.ManagaeProfile" BackgroundImage="mBoutique.png" Title="Manage Profile">
+<ContentPage.Padding>
+	<OnPlatform x:TypeArguments="Thickness"
+                iOS="10, 20, 10, 10"
+                Android="10,10,10,10"/>
+  </ContentPage.Padding> 
+   <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#060217"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>  
+<ContentPage.Content>
+<ScrollView Orientation="Vertical">  
+<TableView BackgroundColor="Transparent">
+    <TableView.Root>
+        <TableSection Title="Manage Profile">
+            <EntryCell Label="{Binding Path=Name}" Placeholder="Enter the name" x:Name="entryName">
+<!--            <EntryCell.Behaviors>
+                <local:NumericValidationBehavior />
+            </EntryCell.Behaviors>-->
+            </EntryCell>
+			<SwitchCell Text="{Binding Path=Gender}" />
+	 <ViewCell>
+    <StackLayout Orientation="Horizontal">
+        <Label  Text="{Binding DOB}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+        <DatePicker HorizontalOptions="End" x:Name="pickerDob"></DatePicker>
+    </StackLayout>
+</ViewCell>
+    <EntryCell Label="{Binding MobileNumber}" Placeholder="Enter Mobile Number" x:Name="entryMobileNum"/>
+   <EntryCell Label="{Binding PhoneNumber}" Placeholder="Enter the PhoneNumber" x:Name="entryPhoneNum"/>
+<ViewCell>
+   <ViewCell.View>
+ <Button Text="{Binding ButtonSave}" HorizontalOptions="End" VerticalOptions="End" BackgroundColor="#49D7B8" TextColor="Black" Clicked="OnManageSaveClicked" HeightRequest="35" WidthRequest="110"/>
+           </ViewCell.View>
+           </ViewCell>
+            </TableSection>
+    </TableView.Root>
+</TableView>
+ </ScrollView>  
+</ContentPage.Content>
+</ContentPage>
